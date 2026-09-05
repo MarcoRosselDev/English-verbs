@@ -1,6 +1,0 @@
-# avaluo
-
-Rol : 16854-00022
-direccion : CALLE NUEVA 522 VILLA VICTORIA
-comuna: SAN PEDRO DE LA PAZ
-destino : HABITACIONAL
