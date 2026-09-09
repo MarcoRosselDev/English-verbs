@@ -31,7 +31,7 @@ CREATE TABLE verb_tenses (
 CREATE INDEX idx_verb_tenses_conjugation ON verb_tenses(conjugation);
 CREATE INDEX idx_verb_tenses_verb_id ON verb_tenses(verb_id);
 
--- Datos de ejemplo - Verbos Irregulares Comunes
+-- Verbos Irregulares Más Comunes
 INSERT INTO verbs (infinitive, past_simple, past_participle, present_participle, third_person_singular, is_regular, spanish_translation) VALUES
 ('be', 'was/were', 'been', 'being', 'is', false, 'ser/estar'),
 ('have', 'had', 'had', 'having', 'has', false, 'tener'),
@@ -47,7 +47,42 @@ INSERT INTO verbs (infinitive, past_simple, past_participle, present_participle,
 ('take', 'took', 'taken', 'taking', 'takes', false, 'tomar/llevar'),
 ('give', 'gave', 'given', 'giving', 'gives', false, 'dar'),
 ('find', 'found', 'found', 'finding', 'finds', false, 'encontrar'),
-('tell', 'told', 'told', 'telling', 'tells', false, 'decir/contar');
+('tell', 'told', 'told', 'telling', 'tells', false, 'decir/contar'),
+('become', 'became', 'become', 'becoming', 'becomes', false, 'convertirse en'),
+('leave', 'left', 'left', 'leaving', 'leaves', false, 'dejar/salir'),
+('feel', 'felt', 'felt', 'feeling', 'feels', false, 'sentir'),
+('put', 'put', 'put', 'putting', 'puts', false, 'poner/colocar'),
+('mean', 'meant', 'meant', 'meaning', 'means', false, 'significar'),
+('keep', 'kept', 'kept', 'keeping', 'keeps', false, 'mantener/guardar'),
+('let', 'let', 'let', 'letting', 'lets', false, 'permitir/dejar'),
+('begin', 'began', 'begun', 'beginning', 'begins', false, 'comenzar'),
+('seem', 'seemed', 'seemed', 'seeming', 'seems', true, 'parecer'),
+('help', 'helped', 'helped', 'helping', 'helps', true, 'ayudar'),
+('talk', 'talked', 'talked', 'talking', 'talks', true, 'hablar'),
+('turn', 'turned', 'turned', 'turning', 'turns', true, 'girar/volverse'),
+('start', 'started', 'started', 'starting', 'starts', true, 'comenzar/iniciar'),
+('show', 'showed', 'shown', 'showing', 'shows', true, 'mostrar'),
+('hear', 'heard', 'heard', 'hearing', 'hears', true, 'oír/escuchar'),
+('play', 'played', 'played', 'playing', 'plays', true, 'jugar/tocar'),
+('run', 'ran', 'run', 'running', 'runs', false, 'correr'),
+('move', 'moved', 'moved', 'moving', 'moves', true, 'mover/mudarse'),
+('like', 'liked', 'liked', 'liking', 'likes', true, 'gustar'),
+('live', 'lived', 'lived', 'living', 'lives', true, 'vivir'),
+('believe', 'believed', 'believed', 'believing', 'believes', true, 'creer'),
+('hold', 'held', 'held', 'holding', 'holds', false, 'sostener/tener'),
+('bring', 'brought', 'brought', 'bringing', 'brings', false, 'traer/llevar'),
+('happen', 'happened', 'happened', 'happening', 'happens', true, 'suceder/ocurrir'),
+('write', 'wrote', 'written', 'writing', 'writes', false, 'escribir'),
+('provide', 'provided', 'provided', 'providing', 'provides', true, 'proveer/proporcionar'),
+('sit', 'sat', 'sat', 'sitting', 'sits', false, 'sentarse'),
+('stand', 'stood', 'stood', 'standing', 'stands', false, 'estar de pie'),
+('lose', 'lost', 'lost', 'losing', 'loses', false, 'perder'),
+('pay', 'paid', 'paid', 'paying', 'pays', false, 'pagar'),
+('meet', 'met', 'met', 'meeting', 'meets', false, 'conocer/encontrar'),
+('include', 'included', 'included', 'including', 'includes', true, 'incluir'),
+('continue', 'continued', 'continued', 'continuing', 'continues', true, 'continuar'),
+('set', 'set', 'set', 'setting', 'sets', false, 'establecer/colocar'),
+('learn', 'learned/learnt', 'learned/learnt', 'learning', 'learns', true, 'aprender');
 
 -- Verbos Regulares de Ejemplo
 INSERT INTO verbs (infinitive, past_simple, past_participle, present_participle, third_person_singular, is_regular, spanish_translation) VALUES
