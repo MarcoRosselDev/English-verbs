@@ -1,20 +1,26 @@
-from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
 import os
 from dotenv import load_dotenv
+from psycopg_pool import ConnectionPool
+from psycopg.rows import dict_row
 
 load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-engine = create_engine(DATABASE_URL)
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-Base = declarative_base()
+# Pool de conexiones reutilizables
+pool = ConnectionPool(
+    conninfo=DATABASE_URL,
+    min_size=2,          # Conexiones mínimas
+    max_size=10,         # Conexiones máximas
+    kwargs={"row_factory": dict_row},  # Devuelve resultados como diccionarios
+    open=True,
+)
+
 
 def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+    """
+    Dependencia de FastAPI: obtiene una conexión del pool
+    y la devuelve al terminar el request.
+    """
+    with pool.connection() as conn:
+        yield conn

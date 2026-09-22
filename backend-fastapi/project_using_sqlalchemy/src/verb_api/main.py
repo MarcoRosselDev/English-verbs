@@ -1,31 +1,24 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from contextlib import asynccontextmanager
-from verb_api.routes import verbs, search
-from verb_api.database import pool
+from src.verb_api.routes import verbs, search
+from src.verb_api.database import engine, Base
+import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
-
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    # Verifica que el pool esté abierto al iniciar
-    pool.open()
-    yield
-    # Cierra el pool al apagar el servidor
-    pool.close()
-
+# Crear tablas
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="Verb Conjugator API",
     description="API para buscar y gestionar verbos en inglés",
     version="1.0.0",
     docs_url="/docs",
-    redoc_url="/redoc",
-    lifespan=lifespan,
+    redoc_url="/redoc"
 )
 
+# CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173", "http://localhost:3000"],
@@ -34,19 +27,19 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Incluir rutas
 app.include_router(verbs.router)
 app.include_router(search.router)
-
 
 @app.get("/")
 def root():
     return {
-        "message": "Verb Conjugator API", 
-        "version": "1.0.0", 
-        "docs": "/docs"
-        }
-
+        "message": "Verb Conjugator API",
+        "version": "1.0.0",
+        "docs": "/docs",
+        "redoc": "/redoc"
+    }
 
 @app.get("/health")
-def health():
+def health_check():
     return {"status": "healthy"}
