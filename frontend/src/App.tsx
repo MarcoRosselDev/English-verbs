@@ -1,67 +1,35 @@
-import { useEffect, useState } from 'react'
-import { getVerbs } from '@/features/verbs/api'
-import { searchVerbs } from '@/features/search/api'
-import { ApiError } from '@/types/api'
-import type { Verb, SearchResult } from '@/types/verb'
+import { useState } from 'react'
+import { SearchBar } from '@/features/search/components/SearchBar'
+import { SearchResults } from '@/features/search/components/SearchResults'
+import { useVerbSearch } from '@/features/search/hooks/useVerbSearch'
 
 function App() {
-  const [verbs, setVerbs] = useState<Verb[]>([])
-  const [searchResults, setSearchResults] = useState<SearchResult[]>([])
-  const [error, setError] = useState<string | null>(null)
-  const [loading, setLoading] = useState(false)
-
-  // Prueba 1: listar primeros 5 verbos
-  useEffect(() => {
-    getVerbs({ limit: 5 })
-      .then(setVerbs)
-      .catch((err) => {
-        if (err instanceof ApiError) setError(err.detail)
-        else setError('Error desconocido')
-      })
-  }, [])
-
-  // Prueba 2: buscar un término
-  const handleSearch = async () => {
-    setLoading(true)
-    setError(null)
-    try {
-      const results = await searchVerbs('ir')
-      setSearchResults(results)
-    } catch (err) {
-      if (err instanceof ApiError) setError(err.detail)
-      else setError('Error desconocido')
-    } finally {
-      setLoading(false)
-    }
-  }
+  const [query, setQuery] = useState('')
+  const { results, loading, error, hasSearched } = useVerbSearch(query)
 
   return (
-    <div style={{ padding: '2rem', fontFamily: 'system-ui' }}>
-      <h1>Verb Conjugator</h1>
+    <main style={{ padding: '2rem 1rem', minHeight: '100vh' }}>
+      <header style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+        <h1 style={{ marginBottom: '0.5rem' }}>Verb Conjugator</h1>
+        <p style={{ color: '#6b7280' }}>
+          Busca verbos en inglés por su forma en inglés o español
+        </p>
+      </header>
 
-      {error && <p style={{ color: 'red' }}>Error: {error}</p>}
+      <SearchBar
+        value={query}
+        onChange={setQuery}
+        autoFocus
+      />
 
-      <h2>Primeros 5 verbos</h2>
-      <ul>
-        {verbs.map((v) => (
-          <li key={v.id}>
-            <strong>{v.infinitive}</strong> — {v.spanish_translation}
-          </li>
-        ))}
-      </ul>
-
-      <h2>Buscar "ir"</h2>
-      <button onClick={handleSearch} disabled={loading}>
-        {loading ? 'Buscando...' : 'Buscar'}
-      </button>
-      <ul>
-        {searchResults.map((r) => (
-          <li key={`${r.id}-${r.relevance_score}`}>
-            {r.infinitive} — {r.spanish_translation} (score: {r.relevance_score})
-          </li>
-        ))}
-      </ul>
-    </div>
+      <SearchResults
+        results={results}
+        loading={loading}
+        error={error}
+        hasSearched={hasSearched}
+        query={query}
+      />
+    </main>
   )
 }
 
