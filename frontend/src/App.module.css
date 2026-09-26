@@ -1,0 +1,51 @@
+.app {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin: 0;
+}
+
+.toolbar {
+  display: flex;
+  gap: 0.75rem;
+  align-items: stretch;
+  max-width: 800px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.toolbar > :first-child {
+  flex: 1;
+  min-width: 240px;
+  max-width: none;
+}
+
+.newBtn {
+  padding: 0 1.25rem;
+  background: #10b981;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s;
+}
+
+.newBtn:hover {
+  background: #059669;
+}
