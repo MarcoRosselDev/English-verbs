@@ -13,22 +13,22 @@
 .field label {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #374151;
+  color: var(--text-secondary);
 }
 
 .field input {
   padding: 0.6rem 0.75rem;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--border-strong);
   border-radius: 6px;
   font-size: 0.95rem;
-  background: #ffffff;
-  color: inherit;
+  background: var(--bg-primary);
+  color: var(--text-primary);
   outline: none;
   transition: border-color 0.15s, box-shadow 0.15s;
 }
 
 .field input:focus {
-  border-color: #3b82f6;
+  border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
 }
 
@@ -42,15 +42,17 @@
   width: 1rem;
   height: 1rem;
   cursor: pointer;
+  accent-color: var(--accent);
 }
 
 .checkbox label {
   font-size: 0.95rem;
   cursor: pointer;
+  color: var(--text-secondary);
 }
 
 .error {
-  color: #dc2626;
+  color: var(--danger-strong);
   font-size: 0.875rem;
   margin: 0;
 }
@@ -61,7 +63,7 @@
   gap: 0.75rem;
   margin-top: 0.5rem;
   padding-top: 1rem;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--border-color);
 }
 
 .actions button {
@@ -80,43 +82,19 @@
 }
 
 .cancelBtn {
-  background: #f3f4f6;
-  color: #374151;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
 }
 
 .cancelBtn:hover:not(:disabled) {
-  background: #e5e7eb;
+  background: var(--bg-hover);
 }
 
 .submitBtn {
-  background: #3b82f6;
+  background: var(--accent);
   color: #ffffff;
 }
 
 .submitBtn:hover:not(:disabled) {
-  background: #2563eb;
-}
-
-@media (prefers-color-scheme: dark) {
-  .field label {
-    color: #d1d5db;
-  }
-
-  .field input {
-    background: #242424;
-    border-color: #3a3a3a;
-  }
-
-  .actions {
-    border-color: #3a3a3a;
-  }
-
-  .cancelBtn {
-    background: #2a2a2a;
-    color: #d1d5db;
-  }
-
-  .cancelBtn:hover:not(:disabled) {
-    background: #3a3a3a;
-  }
+  background: var(--accent-hover);
 }

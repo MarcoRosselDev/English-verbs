@@ -1,3 +1,4 @@
+import { ThemeToggle } from '@/components/ThemeToggle'
 import { useState } from 'react'
 import { Modal } from '@/components/Modal'
 import { SearchBar } from '@/features/search/components/SearchBar'
@@ -72,6 +73,9 @@ function App() {
 
   return (
     <main className={styles.app}>
+      <div className={styles.themeCorner}>
+        <ThemeToggle />
+      </div>
       <header className={styles.header}>
         <h1 className={styles.title}>Verb Conjugator</h1>
         <p className={styles.subtitle}>
