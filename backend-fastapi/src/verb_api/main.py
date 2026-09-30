@@ -8,12 +8,18 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-@asynccontextmanager
+""" @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Verifica que el pool esté abierto al iniciar
     pool.open()
     yield
     # Cierra el pool al apagar el servidor
+    pool.close() """
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # El pool ya está abierto por open=True en database.py
+    yield
     pool.close()
 
 
@@ -28,7 +34,11 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000", "https://illustrious-meringue-852c92.netlify.app"],
+    allow_origins=[
+        "http://localhost:5173", 
+        "http://localhost:3000", 
+        "https://illustrious-meringue-852c92.netlify.app"
+        ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

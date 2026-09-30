@@ -1,3 +1,4 @@
+# src/verb_api/database.py
 import os
 from dotenv import load_dotenv
 from psycopg_pool import ConnectionPool
@@ -7,20 +8,16 @@ load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-# Pool de conexiones reutilizables
+# NOTA: open=True hace que el pool se abra automáticamente al crearse.
 pool = ConnectionPool(
     conninfo=DATABASE_URL,
-    min_size=2,          # Conexiones mínimas
-    max_size=10,         # Conexiones máximas
-    kwargs={"row_factory": dict_row},  # Devuelve resultados como diccionarios
-    open=True,
+    min_size=1,  # Reducido para serverless
+    max_size=5,  # Reducido para serverless
+    kwargs={"row_factory": dict_row},
+    open=True,   # IMPORTANTE: Abrir al crear
 )
 
-
 def get_db():
-    """
-    Dependencia de FastAPI: obtiene una conexión del pool
-    y la devuelve al terminar el request.
-    """
+    # El pool ya está abierto, así que solo obtenemos una conexión.
     with pool.connection() as conn:
         yield conn

@@ -1,7 +1,8 @@
-# backend-fastapi/api/index.py
-from src.verb_api.main import app
+# api/index.py
+import sys
+import os
 
-# Vercel busca una variable llamada 'app' para pasarla al servidor ASGI.
-# La importación de arriba cumple con ese requisito.
+# Añade la carpeta 'src' al path de Python
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
-# we[re]
+from verb_api.main import app
