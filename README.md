@@ -82,13 +82,13 @@ Además de resolver una necesidad real, este proyecto fue diseñado como **pieza
 ## 📸 Screenshots
 
 ### Búsqueda de verbos
-![Resultados de búsqueda](./docs/screenshots/search-results.png)
+![Resultados de búsqueda](./docs/screenshots/resultado-de-busqueda.png)
 
 ### Crear / editar verbo
 ![Modal de creación](./docs/screenshots/editar.png)
 
 ### Tema oscuro
-![Tema oscuro](./docs/screenshots/screenshot-rocks-dark.png)
+![Tema oscuro](./docs/screenshots/tema-oscuro.png)
 
 ---
 
@@ -348,10 +348,10 @@ curl -X POST "https://english-verbs-rho.vercel.app/api/verbs/" \
 
 **Marco Rossel**
 
-- Portfolio: [tu-portfolio.com](https://tu-portfolio.com)
-- LinkedIn: [@tu-usuario](https://linkedin.com/in/tu-usuario)
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
-- Email: tu@email.com
+- Portfolio: [@proximamente](https://github.com/MarcoRosselDev)
+- LinkedIn: [@marco rossel](https://www.linkedin.com/in/marco-rossel-378b85256/)
+- GitHub: [@MarcoRosselDev](https://github.com/MarcoRosselDev)
+- Email: andresmarcorossel@gmail.com
 
 ---
 
