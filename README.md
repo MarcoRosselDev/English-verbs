@@ -15,7 +15,7 @@
 
 ---
 
-![Verb Conjugator - Vista principal](./docs/screenshots/hero.png)
+![Verb Conjugator - Vista principal](./docs/screenshots/screenshot-rocks.png)
 
 ---
 
@@ -85,10 +85,10 @@ Además de resolver una necesidad real, este proyecto fue diseñado como **pieza
 ![Resultados de búsqueda](./docs/screenshots/search-results.png)
 
 ### Crear / editar verbo
-![Modal de creación](./docs/screenshots/create-modal.png)
+![Modal de creación](./docs/screenshots/editar.png)
 
 ### Tema oscuro
-![Tema oscuro](./docs/screenshots/dark-mode.png)
+![Tema oscuro](./docs/screenshots/screenshot-rocks-dark.png)
 
 ---
 
@@ -346,7 +346,7 @@ curl -X POST "https://english-verbs-rho.vercel.app/api/verbs/" \
 
 ## 👤 Autor
 
-**Tu Nombre**
+**Marco Rossel**
 
 - Portfolio: [tu-portfolio.com](https://tu-portfolio.com)
 - LinkedIn: [@tu-usuario](https://linkedin.com/in/tu-usuario)
