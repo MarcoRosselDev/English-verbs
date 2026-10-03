@@ -7,12 +7,14 @@ import { useVerbSearch } from '@/features/search/hooks/useVerbSearch'
 import { VerbForm } from '@/features/verbs/components/VerbForm'
 import { useVerbMutations } from '@/features/verbs/hooks/useVerbMutations'
 import { getVerbById } from '@/features/verbs/api'
+import { useVerbSuggestions } from '@/features/search/hooks/useVerbSuggestions'
 import type { SearchResult, Verb, VerbCreate } from '@/types/verb'
 import styles from './App.module.css'
 
 function App() {
   const [query, setQuery] = useState('')
   const { results, loading, error, hasSearched } = useVerbSearch(query)
+  const { suggestions } = useVerbSuggestions(query)
 
   // Estado del modal
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -76,6 +78,7 @@ function App() {
       <div className={styles.themeCorner}>
         <ThemeToggle />
       </div>
+
       <header className={styles.header}>
         <h1 className={styles.title}>Verb Conjugator</h1>
         <p className={styles.subtitle}>
@@ -84,7 +87,12 @@ function App() {
       </header>
 
       <div className={styles.toolbar}>
-        <SearchBar value={query} onChange={setQuery} autoFocus />
+        <SearchBar
+          value={query}
+          onChange={setQuery}
+          suggestions={suggestions}
+          autoFocus
+        />
         <button className={styles.newBtn} onClick={openCreateModal}>
           + Nuevo verbo
         </button>

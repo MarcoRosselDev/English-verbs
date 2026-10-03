@@ -1,4 +1,5 @@
 .wrapper {
+  position: relative;
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
@@ -23,4 +24,60 @@
 
 .input::placeholder {
   color: var(--text-muted);
+}
+
+/* ===== Dropdown de sugerencias ===== */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 0.25rem);
+  left: 0;
+  right: 0;
+  z-index: 50;
+
+  list-style: none;
+  padding: 0.25rem;
+  margin: 0;
+
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+
+  max-height: 320px;
+  overflow-y: auto;
+
+  animation: dropdownIn 0.12s ease-out;
+}
+
+@keyframes dropdownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.option {
+  padding: 0.6rem 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  transition: background-color 0.1s;
+}
+
+.option:hover,
+.optionActive {
+  background: var(--accent-soft);
+  color: var(--accent-hover);
+}
+
+@media (prefers-color-scheme: dark) {
+  .option:hover,
+  .optionActive {
+    color: var(--accent);
+  }
 }
