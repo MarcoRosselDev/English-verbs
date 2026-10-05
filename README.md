@@ -10,7 +10,7 @@
 [![TypeScript](https://img.shields.io/badge/typescript-5-3178C6?logo=typescript)](https://www.typescriptlang.org/)
 [![License](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
 
-**🌐 Demo en vivo:** [illustrious-meringue-852c92.netlify.app](https://illustrious-meringue-852c92.netlify.app)  
+**🌐 Demo en vivo:** [https://englishverb-conjugation.netlify.app/](https://englishverb-conjugation.netlify.app/)  
 **📚 API Docs:** [english-verbs-rho.vercel.app/docs](https://english-verbs-rho.vercel.app/docs)
 
 ---
