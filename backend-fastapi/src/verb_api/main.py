@@ -38,7 +38,7 @@ app.add_middleware(
         "http://localhost:5173", 
         "http://localhost:3000", 
         "https://illustrious-meringue-852c92.netlify.app", # first frontend page o netlify
-        "https://englishverb-conjugation.netlify.app/" # finally frontend page
+        "https://englishverb-conjugation.netlify.app" # finally frontend page
         ],
     allow_credentials=True,
     allow_methods=["*"],
