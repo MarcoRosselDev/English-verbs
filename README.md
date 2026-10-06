@@ -1,6 +1,6 @@
 # 🔤 Verb Conjugator
 
-> Buscador inteligente de verbos en inglés con todas sus conjugaciones, traducción al español y gestión CRUD completa.
+> Smart English verb finder with all conjugations, Spanish translation, and full CRUD management.
 
 [![Backend](https://img.shields.io/badge/backend-Vercel-black?logo=vercel)](https://english-verbs-rho.vercel.app)
 [![Frontend](https://img.shields.io/badge/frontend-Netlify-00C7B7?logo=netlify)](https://illustrious-meringue-852c92.netlify.app)
@@ -10,93 +10,93 @@
 [![TypeScript](https://img.shields.io/badge/typescript-5-3178C6?logo=typescript)](https://www.typescriptlang.org/)
 [![License](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
 
-**🌐 Demo en vivo:** [https://englishverb-conjugation.netlify.app/](https://englishverb-conjugation.netlify.app/)  
+**🌐 Live Demo:** [https://englishverb-conjugation.netlify.app/](https://englishverb-conjugation.netlify.app/)  
 **📚 API Docs:** [english-verbs-rho.vercel.app/docs](https://english-verbs-rho.vercel.app/docs)
 
 ---
 
-![Verb Conjugator - Vista principal](./docs/screenshots/screenshot-rocks.png)
+![Verb Conjugator - Main view](./docs/screenshots/hero.png)
 
 ---
 
-## 📖 Sobre el proyecto
+## 📖 About the project
 
-Este proyecto nació de una **necesidad personal**: cuando estudio inglés, constantemente tengo que buscar verbos en Google para verificar sus conjugaciones en diferentes tiempos verbales. Saltar entre pestañas, ver resultados dispersos y perder tiempo se volvió frustrante.
+This project was born from a **personal need**: when I study English, I constantly have to look up verbs on Google to check their conjugations across different tenses. Jumping between tabs, seeing scattered results, and wasting time became frustrating.
 
-**Verb Conjugator** centraliza esa información en una interfaz rápida y limpia: buscas un verbo por su forma en inglés o por su traducción al español, y obtienes al instante el pasado simple, participio pasado, gerundio y la tercera persona del singular.
+**Verb Conjugator** centralizes that information in a fast, clean interface: you search for a verb by its English form or by its Spanish translation, and you instantly get the past simple, past participle, gerund, and third-person singular.
 
-Además de resolver una necesidad real, este proyecto fue diseñado como **pieza de portafolio** para demostrar dominio de:
+Beyond solving a real need, this project was designed as a **portfolio piece** to demonstrate mastery of:
 
-- Desarrollo **fullstack** con Python y TypeScript
-- **PostgreSQL** con SQL puro (sin ORM) y funciones almacenadas
-- Despliegue **serverless** en Vercel + Netlify + Neon
-- **Buenas prácticas** de código: tipado, separación por features, hooks personalizados, CSS variables
+- **Fullstack** development with Python and TypeScript
+- **PostgreSQL** with raw SQL (no ORM) and stored functions
+- **Serverless** deployment on Vercel + Netlify + Neon
+- **Best practices**: typing, feature-based separation, custom hooks, CSS variables
 
 ---
 
-## 🛠️ Stack tecnológico
+## 🛠️ Tech Stack
 
 ### Backend
-- **FastAPI** — framework web moderno con validación automática
-- **psycopg 3** — driver PostgreSQL con pool de conexiones (sin ORM)
-- **Pydantic** — validación y serialización de datos
-- **uv** — gestor de dependencias ultrarrápido
-- **Vercel** — despliegue serverless
+- **FastAPI** — modern web framework with automatic validation
+- **psycopg 3** — PostgreSQL driver with connection pooling (no ORM)
+- **Pydantic** — data validation and serialization
+- **uv** — ultra-fast dependency manager
+- **Vercel** — serverless deployment
 
 ### Frontend
-- **React 19** — librería de UI
-- **TypeScript** — tipado estático
-- **Vite** — bundler y dev server
-- **CSS Modules + Variables CSS** — estilos con scope y tematización
-- **Netlify** — despliegue y CDN global
+- **React 19** — UI library
+- **TypeScript** — static typing
+- **Vite** — bundler and dev server
+- **CSS Modules + CSS Variables** — scoped styling and theming
+- **Netlify** — deployment and global CDN
 
-### Base de datos
-- **PostgreSQL** (Neon) — base de datos relacional serverless
-- **Función `search_verbs`** — búsqueda ponderada por relevancia
-- **Índices** en columnas de búsqueda para rendimiento
+### Database
+- **PostgreSQL** (Neon) — serverless relational database
+- **`search_verbs` function** — relevance-weighted search
+- **Indexes** on search columns for performance
 
 ---
 
-## ✨ Características
+## ✨ Features
 
-### Búsqueda
-- 🔍 Búsqueda por **forma en inglés** (infinitivo, pasado, participio, etc.)
-- 🇪🇸 Búsqueda por **traducción al español**
-- ⚡ **Debounce de 300ms** para evitar requests innecesarios
-- 🎯 **Scoring de relevancia** — coincidencias exactas primero
+### Search
+- 🔍 Search by **English form** (infinitive, past, participle, etc.)
+- 🇪🇸 Search by **Spanish translation**
+- ⚡ **300ms debounce** to avoid unnecessary requests
+- 🎯 **Relevance scoring** — exact matches first
 
-### Gestión de verbos (CRUD)
-- ➕ Crear nuevos verbos con formulario validado
-- ✏️ Editar verbos existentes con datos precargados
-- 🗑️ Eliminar con confirmación
-- 🏷️ Distinción visual entre verbos **regulares** e **irregulares**
+### Verb management (CRUD)
+- ➕ Create new verbs with a validated form
+- ✏️ Edit existing verbs with pre-filled data
+- 🗑️ Delete with confirmation
+- 🏷️ Visual distinction between **regular** and **irregular** verbs
 
-### Experiencia de usuario
-- 🌓 **Tema claro / oscuro / sistema** con persistencia en `localStorage`
-- 📱 **Diseño responsive** (móvil, tablet, escritorio)
-- ⚠️ **Estados explícitos**: loading, error, vacío, éxito
-- ♿ **Accesibilidad básica**: roles ARIA, focus states, keyboard nav
+### User Experience
+- 🌓 **Light / dark / system theme** with `localStorage` persistence
+- 📱 **Responsive design** (mobile, tablet, desktop)
+- ⚠️ **Explicit states**: loading, error, empty, success
+- ♿ **Basic accessibility**: ARIA roles, focus states, keyboard nav
 
 ---
 
 ## 📸 Screenshots
 
-### Búsqueda de verbos
-![Resultados de búsqueda](./docs/screenshots/resultado-de-busqueda.png)
+### Verb search
+![Search results](./docs/screenshots/resultado-de-busqueda.png)
 
-### Crear / editar verbo
-![Modal de creación](./docs/screenshots/editar.png)
+### Create / edit verb
+![Create modal](./docs/screenshots/editar.png)
 
-### Tema oscuro
-![Tema oscuro](./docs/screenshots/tema-oscuro.png)
+### Dark theme
+![Dark theme](./docs/screenshots/tema-oscuro.png)
 
 ---
 
-## 🏗️ Arquitectura
+## 🏗️ Architecture
 
 ```
 ┌────────────────────────────────────────────────────────────┐
-│                     Usuario / Navegador                    │
+│                     User / Browser                         │
 └──────────────────────────┬─────────────────────────────────┘
                            │
                            ▼
@@ -109,7 +109,7 @@ Además de resolver una necesidad real, este proyecto fue diseñado como **pieza
 │  └─────────────┘  └──────────────┘  └──────────────────┘   │
 │                                                            │
 │  ┌─────────────────────────────────────────────────────┐   │
-│  │  apiClient (fetch tipado + manejo de errores)       │   │
+│  │  apiClient (typed fetch + error handling)           │   │
 │  └─────────────────────────────────────────────────────┘   │
 └──────────────────────────┬─────────────────────────────────┘
                            │ HTTP / JSON
@@ -119,7 +119,7 @@ Además de resolver una necesidad real, este proyecto fue diseñado como **pieza
 │  Vercel · https://english-verbs-rho.vercel.app             │
 │                                                            │
 │  ┌────────────┐  ┌───────────┐  ┌──────────────────────┐   │
-│  │  /verbs    │  │  /search  │  │  Pool de conexiones  │   │
+│  │  /verbs    │  │  /search  │  │  Connection pool     │   │
 │  │  CRUD      │  │  Query    │  │  psycopg 3           │   │
 │  └────────────┘  └───────────┘  └──────────┬───────────┘   │
 └────────────────────────────────────────────┬───────────────┘
@@ -129,31 +129,31 @@ Además de resolver una necesidad real, este proyecto fue diseñado como **pieza
 │  PostgreSQL (Neon)                                         │
 │                                                            │
 │  ┌─────────────────┐  ┌────────────────────────────────┐   │
-│  │  tabla: verbs   │  │  función: search_verbs(term)   │   │
+│  │  table: verbs   │  │  function: search_verbs(term)  │   │
 │  └─────────────────┘  └────────────────────────────────┘   │
 └────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🚀 Cómo correr localmente
+## 🚀 How to run locally
 
-### Requisitos previos
+### Prerequisites
 
-- **Node.js** 20+ y **npm**
-- **Python** 3.12+ y **uv** ([instalación](https://docs.astral.sh/uv/))
-- **PostgreSQL** 15+ corriendo localmente
+- **Node.js** 20+ and **npm**
+- **Python** 3.12+ and **uv** ([installation](https://docs.astral.sh/uv/))
+- **PostgreSQL** 15+ running locally
 
-### 1. Clonar el repositorio
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/tu-usuario/verb-conjugator.git
 cd verb-conjugator
 ```
 
-### 2. Configurar la base de datos
+### 2. Set up the database
 
-Crea una base de datos y ejecuta el script de inicialización:
+Create a database and run the initialization script:
 
 ```bash
 createdb -U postgres verb_conjugator
@@ -165,51 +165,51 @@ psql -U postgres -d verb_conjugator -f backend-fastapi/setup_database.sql
 ```bash
 cd backend-fastapi
 
-# Instalar dependencias
+# Install dependencies
 uv sync
 
-# Crear archivo .env
-echo "DATABASE_URL=postgresql://postgres:tu_password@localhost:5432/verb_conjugator" > .env
+# Create .env file
+echo "DATABASE_URL=postgresql://postgres:your_password@localhost:5432/verb_conjugator" > .env
 
-# Ejecutar servidor
+# Run server
 uv run uvicorn src.verb_api.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-Backend disponible en `http://localhost:8000`  
-Documentación interactiva en `http://localhost:8000/docs`
+Backend available at `http://localhost:8000`  
+Interactive docs at `http://localhost:8000/docs`
 
 ### 4. Frontend (React + Vite)
 
-En otra terminal:
+In another terminal:
 
 ```bash
 cd frontend
 
-# Instalar dependencias
+# Install dependencies
 npm install
 
-# Crear archivo .env
+# Create .env file
 echo "VITE_API_URL=http://localhost:8000" > .env
 
-# Ejecutar servidor de desarrollo
+# Run dev server
 npm run dev
 ```
 
-Frontend disponible en `http://localhost:5173`
+Frontend available at `http://localhost:5173`
 
 ---
 
-## ☁️ Cómo desplegar
+## ☁️ How to deploy
 
-### Base de datos — Neon
+### Database — Neon
 
-1. Crea una cuenta en [neon.com](https://neon.com)
-2. Crea un nuevo proyecto PostgreSQL
-3. Importa el esquema con `psql`:
+1. Create an account at [neon.com](https://neon.com)
+2. Create a new PostgreSQL project
+3. Import the schema with `psql`:
    ```bash
-   psql "<TU_CADENA_DE_CONEXION_DE_NEON>" -f backup.sql
+   psql "<YOUR_NEON_CONNECTION_STRING>" -f backup.sql
    ```
-4. **Importante**: verifica que la secuencia de `id` esté correctamente asociada:
+4. **Important**: verify that the `id` sequence is properly attached:
    ```sql
    SELECT setval('verbs_id_seq', COALESCE((SELECT MAX(id) FROM verbs), 0) + 1, false);
    ALTER TABLE verbs ALTER COLUMN id SET DEFAULT nextval('verbs_id_seq');
@@ -218,19 +218,19 @@ Frontend disponible en `http://localhost:5173`
 
 ### Backend — Vercel
 
-1. Conecta tu repositorio de GitHub a [vercel.com](https://vercel.com)
-2. Configura el proyecto:
+1. Connect your GitHub repository to [vercel.com](https://vercel.com)
+2. Configure the project:
    - **Root Directory**: `backend-fastapi`
    - **Framework Preset**: Other
-3. Añade la variable de entorno:
-   - `DATABASE_URL`: tu cadena de conexión de Neon
-4. Crea `api/index.py`:
+3. Add the environment variable:
+   - `DATABASE_URL`: your Neon connection string
+4. Create `api/index.py`:
    ```python
    import sys, os
    sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
    from verb_api.main import app
    ```
-5. Crea `vercel.json`:
+5. Create `vercel.json`:
    ```json
    {
      "builds": [{ "src": "api/index.py", "use": "@vercel/python" }],
@@ -241,12 +241,12 @@ Frontend disponible en `http://localhost:5173`
 
 ### Frontend — Netlify
 
-1. Conecta tu repositorio a [netlify.com](https://netlify.com)
-2. Configura el proyecto:
+1. Connect your repository to [netlify.com](https://netlify.com)
+2. Configure the project:
    - **Base directory**: `frontend`
    - **Build command**: `npm run build`
    - **Publish directory**: `dist`
-3. Crea `frontend/netlify.toml`:
+3. Create `frontend/netlify.toml`:
    ```toml
    [build]
      command = "npm run build"
@@ -268,36 +268,36 @@ Frontend disponible en `http://localhost:5173`
 
 ### Base URL
 - **Local:** `http://localhost:8000`
-- **Producción:** `https://english-verbs-rho.vercel.app`
+- **Production:** `https://english-verbs-rho.vercel.app`
 
 ### Endpoints
 
-#### Verbos
+#### Verbs
 
-| Método | Endpoint | Descripción |
+| Method | Endpoint | Description |
 |--------|----------|-------------|
-| `GET` | `/api/verbs/` | Lista de verbos (paginado, búsqueda opcional) |
-| `GET` | `/api/verbs/count` | Cuenta total de verbos |
-| `GET` | `/api/verbs/{id}` | Obtener un verbo por ID |
-| `POST` | `/api/verbs/` | Crear un nuevo verbo |
-| `PUT` | `/api/verbs/{id}` | Actualizar un verbo |
-| `DELETE` | `/api/verbs/{id}` | Eliminar un verbo |
+| `GET` | `/api/verbs/` | List of verbs (paginated, optional search) |
+| `GET` | `/api/verbs/count` | Total count of verbs |
+| `GET` | `/api/verbs/{id}` | Get a verb by ID |
+| `POST` | `/api/verbs/` | Create a new verb |
+| `PUT` | `/api/verbs/{id}` | Update a verb |
+| `DELETE` | `/api/verbs/{id}` | Delete a verb |
 
-#### Búsqueda
+#### Search
 
-| Método | Endpoint | Descripción |
+| Method | Endpoint | Description |
 |--------|----------|-------------|
-| `GET` | `/api/search/?q={term}` | Búsqueda ponderada por relevancia |
-| `GET` | `/api/search/suggestions?q={term}` | Sugerencias para autocompletado |
+| `GET` | `/api/search/?q={term}` | Relevance-weighted search |
+| `GET` | `/api/search/suggestions?q={term}` | Autocomplete suggestions |
 
-### Ejemplos
+### Examples
 
-**Buscar un verbo:**
+**Search for a verb:**
 ```bash
-curl "https://english-verbs-rho.vercel.app/api/search/?q=correr"
+curl "https://english-verbs-rho.vercel.app/api/search/?q=run"
 ```
 
-**Crear un verbo:**
+**Create a verb:**
 ```bash
 curl -X POST "https://english-verbs-rho.vercel.app/api/verbs/" \
   -H "Content-Type: application/json" \
@@ -316,51 +316,51 @@ curl -X POST "https://english-verbs-rho.vercel.app/api/verbs/" \
 
 ## 🗺️ Roadmap
 
-### ✅ Completado
-- [x] Base de datos PostgreSQL con función de búsqueda ponderada
-- [x] Backend FastAPI con psycopg 3 (sin ORM)
-- [x] CRUD completo de verbos
-- [x] Búsqueda por inglés y español
-- [x] Frontend React + TypeScript + Vite
-- [x] Búsqueda con debounce
-- [x] Modal de creación/edición con validación
-- [x] Tema claro/oscuro/sistema con persistencia
-- [x] Despliegue en Vercel + Netlify + Neon
+### ✅ Completed
+- [x] PostgreSQL database with relevance-weighted search function
+- [x] FastAPI backend with psycopg 3 (no ORM)
+- [x] Full verb CRUD
+- [x] Search by English and Spanish
+- [x] React + TypeScript + Vite frontend
+- [x] Debounced search
+- [x] Create/edit modal with validation
+- [x] Light/dark/system theme with persistence
+- [x] Deployment on Vercel + Netlify + Neon
 
-### 🚧 En progreso
-- [ ] Autocompletado en el buscador
-- [ ] Filtro regular/irregular
-- [ ] Paginación o scroll infinito
+### 🚧 In progress
+- [ ] Search autocomplete
+- [ ] Regular/irregular filter
+- [ ] Pagination or infinite scroll
 
-### 🔮 Futuras mejoras
-- [ ] Tests unitarios (Vitest + pytest)
-- [ ] Modal de confirmación propio + toasts
-- [ ] Migración a Tailwind CSS
-- [ ] Backend alternativo en Express / Next.js
-- [ ] Autenticación con roles (admin / viewer)
-- [ ] Docker Compose para desarrollo local
-- [ ] CI/CD con GitHub Actions
-- [ ] Búsqueda full-text con `tsvector`
+### 🔮 Future improvements
+- [ ] Unit tests (Vitest + pytest)
+- [ ] Custom confirmation modal + toasts
+- [ ] Migration to Tailwind CSS
+- [ ] Alternative backend in Express / Next.js
+- [ ] Authentication with roles (admin / viewer)
+- [ ] Docker Compose for local development
+- [ ] CI/CD with GitHub Actions
+- [ ] Full-text search with `tsvector`
 
 ---
 
-## 👤 Autor
+## 👤 Author
 
 **Marco Rossel**
 
-- Portfolio: [@proximamente](https://github.com/MarcoRosselDev)
+- Portfolio: [@coming-soon](https://github.com/MarcoRosselDev)
 - LinkedIn: [@marco rossel](https://www.linkedin.com/in/marco-rossel-378b85256/)
 - GitHub: [@MarcoRosselDev](https://github.com/MarcoRosselDev)
 - Email: andresmarcorossel@gmail.com
 
 ---
 
-## 📄 Licencia
+## 📄 License
 
-Este proyecto está bajo la licencia MIT. Ver el archivo [LICENSE](./LICENSE) para más detalles.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
 ---
 
 <p align="center">
-  Hecho con ☕ y muchas ganas de aprender
+  Made with ☕ and a lot of willingness to learn
 </p>
