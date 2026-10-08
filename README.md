@@ -147,8 +147,8 @@ Beyond solving a real need, this project was designed as a **portfolio piece** t
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/tu-usuario/verb-conjugator.git
-cd verb-conjugator
+git clone https://github.com/MarcoRosselDev/English-verbs.git
+cd English-verbs
 ```
 
 ### 2. Set up the database
@@ -157,7 +157,7 @@ Create a database and run the initialization script:
 
 ```bash
 createdb -U postgres verb_conjugator
-psql -U postgres -d verb_conjugator -f backend-fastapi/setup_database.sql
+psql -U postgres -d verb_conjugator -f database-postgresql/setup_db.sql
 ```
 
 ### 3. Backend (FastAPI)
